@@ -9,6 +9,9 @@ export const opinionesModule = {
     },
     DELETE_LISTADO(state, newListado) {
       state.listado.splice(newListado, 1)
+    },
+    MODIFICAR_LISTADO(state, index) {
+      state.listado[index[0].id] = index[1]
     }
   },
   actions: {
@@ -18,8 +21,8 @@ export const opinionesModule = {
     eliminarOpinion(context, opinion) {
       context.commit('DELETE_LISTADO', opinion)
     },
-    editarOpinion(context, opinion) {
-      context.commit('DELETE_LISTADO', opinion)
+    editarOpinion(context, index) {
+      context.commit('MODIFICAR_LISTADO', index)
     }
   }
 }

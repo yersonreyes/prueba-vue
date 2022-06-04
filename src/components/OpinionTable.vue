@@ -36,7 +36,7 @@ export default {
   methods: {
     ...mapActions('opiniones', ['eliminarOpinion']),
     redireccionar($index) {
-      this.$router.push(`/administracion:${$index}`)
+      this.$router.push(`/administracion/${$index}`)
     }
   }
 }

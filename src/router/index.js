@@ -26,7 +26,7 @@ const routes = [
     component: AdministracionView
   },
   {
-    path: '/administracion:id',
+    path: '/administracion/:id',
     name: 'EditarOpinion',
     component: EditarOpinionView
   },
