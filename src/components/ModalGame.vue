@@ -15,22 +15,18 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form @submit.prevent="agregarOpinionModal">
             <div class="form-group">
               <label>Nombre</label>
-              <input v-model="nombreOpinion" type="text" class="form-control" />
+              <input required v-model="nombreOpinion" type="text" class="form-control" />
             </div>
             <div class="form-group">
               <label>Opiniones</label>
-              <textarea v-model="textoOpinion" class="form-control" rows="3"></textarea>
+              <textarea required v-model="textoOpinion" class="form-control" rows="3"></textarea>
             </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary ml-2">Guardar Opinion</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button @click="agregarOpinionModal" type="button" class="btn btn-primary">
-            Guardar Opinion
-          </button>
         </div>
       </div>
     </div>

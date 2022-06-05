@@ -1,5 +1,5 @@
 <template>
-  <form class="container mt-5">
+  <form @submit.prevent="editarOpinionBoton" class="container mt-5">
     <div class="form-group">
       <h2>{{ opiniones[$route.params.id].titulo }}</h2>
       <label>Nombre</label>
@@ -8,6 +8,7 @@
         :placeholder="opiniones[$route.params.id].nombre"
         type="text"
         class="form-control"
+        required
       />
     </div>
     <div class="form-group">
@@ -17,10 +18,11 @@
         :placeholder="opiniones[$route.params.id].opinion"
         class="form-control"
         rows="3"
+        required
       ></textarea>
     </div>
     <button @click="volver" type="button" class="btn btn-secondary">Volver</button>
-    <button @click="editarOpinionBoton" type="button" class="ml-2 btn btn-primary">Editar</button>
+    <button type="submit" class="ml-2 btn btn-primary">Editar</button>
   </form>
 </template>
 

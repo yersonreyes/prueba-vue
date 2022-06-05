@@ -1,23 +1,27 @@
 <template>
   <div class="container opinionesView">
     <h1 class="text-center">Lista de opiniones</h1>
-    <div class="alert alert-danger" role="alert">No existen opiniones por mostrar</div>
+    <div v-if="opiniones.length === 0" class="alert alert-danger" role="alert">
+      No existen opiniones por mostrar
+    </div>
     <ul>
-      <li v-for="(opinion, $index) in opiniones" :key="$index">
-        Opinion creada por :{{ opinion.nombre }} para el juego {{ opinion.titulo }}
-        <hr />
-        Opinion:{{ opinion.opinion }}
-      </li>
+      <OpinionListado
+        v-for="(opinion, $index) in opiniones"
+        :key="$index"
+        :nombre="opinion.nombre"
+        :titulo="opinion.titulo"
+        :opinion="opinion.opinion"
+      />
     </ul>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-
+import OpinionListado from '@/components/OpinionListado.vue'
 export default {
   name: 'OpinionesView',
-  components: {},
+  components: { OpinionListado },
   computed: {
     ...mapState('opiniones', {
       opiniones: (state) => state.listado

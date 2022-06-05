@@ -1,7 +1,6 @@
 <template>
   <div class="container administracionView">
     <h1 class="text-center">Administrar la Lista de Opiniones</h1>
-    <div class="alert alert-danger" role="alert">No existen opiniones por mostrar</div>
     <OpinionTable />
   </div>
 </template>
